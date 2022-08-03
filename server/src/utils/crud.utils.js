@@ -4,7 +4,7 @@ export async function create(res, entity, body, message) {
 	try {
 		const newType = new entity(body);
 		await newType.save();
-		state201(res, body.name, message);
+		state201(res, message);
 	} catch (err) { }
 }
 
@@ -35,3 +35,10 @@ export async function getById(res, entity, id) {
 		state200(res, item);
 	} catch (err) { }
 } 
+
+export async function ifexist(entity, id) {
+	try {
+		const item = await entity.findByPK(id);
+		return item ? true : false;
+	} catch (err) { }
+}

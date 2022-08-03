@@ -1,6 +1,6 @@
 import { Guest } from '../models/guest.js';
 
-import { error400, error409, error400, error505 } from '../utils/error.js';
+import { error400, error409, error505 } from '../utils/error.js';
 import { create, update, getAll, deleteE, getById } from '../utils/crud.utils.js';
 
 export const getGuests = async (req, res) => {
@@ -29,7 +29,7 @@ export const addGuest = async (req, res) => {
     if (exist)
       error409(res, body.passport);
     else 
-      create(res, Guest, body, 'fue creado');
+      create(res, Guest, body, `${body.firstname} fue creado`);
   } catch (err) {
     error505(res, 'in addGuest');
   }

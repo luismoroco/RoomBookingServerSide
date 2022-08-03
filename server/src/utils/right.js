@@ -1,6 +1,6 @@
-export function state201(res, data, message) {
+export function state201(res, message) {
   res.status(201).json({
-    msg: `${data} ${message}!`
+    msg: `${message}!`
   });
 }
 

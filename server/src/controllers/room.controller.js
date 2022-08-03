@@ -21,7 +21,7 @@ export const addTypeRoom = async (req, res) => {
 		if (exist)
 			error409(res, body.name);
 		else
-			create(res, Typeroom, body, 'fue creado');
+			create(res, Typeroom, body, `${body.name} fue creado`);
 	} catch (err) {
 		error505(res, 'in addType');
 	}
@@ -59,7 +59,7 @@ export const addRoom = async (req, res) => {
 		else if (!type)
 			error400(res, body.idtype, 'No existe el typeroom con id');
 		else
-			create(res, Room, body, 'fue creado');
+			create(res, Room, body, `${body.name} fue creado`);
 	} catch (err) {
 		error505(res, 'in addRoom');
 	}
