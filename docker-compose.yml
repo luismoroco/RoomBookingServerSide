@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  db:
+    build: ./database
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: tuGerente
+    restart: always
+  web:
+    build: ./server
+    environment:
+      MYSQL_DATABASE: tuGerente
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_HOST: database
+      PORT: 5000
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    restart: on-failure
