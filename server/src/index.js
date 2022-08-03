@@ -1,5 +1,5 @@
 import app from "./app.js";
-import {throwerror} from './utils/error.js';
+import { throwerror } from './utils/error.js';
 
 const PORT = process.env.PORT || 5000;
 

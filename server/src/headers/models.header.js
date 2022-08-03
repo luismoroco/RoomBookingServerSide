@@ -1,2 +1,2 @@
-import {DataTypes} from 'sequelize';
-import {ORM} from '../db/dbconfig';
+import { DataTypes } from 'sequelize';
+import { ORM } from '../db/dbconfig';

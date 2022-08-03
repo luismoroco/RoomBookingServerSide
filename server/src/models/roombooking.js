@@ -1,5 +1,5 @@
-import {DataTypes} from 'sequelize';
-import {ORM} from '../db/dbconfig.js';
+import { DataTypes } from 'sequelize';
+import { ORM } from '../db/dbconfig.js';
 
 export const RoomBoooking = ORM.define('RoomBoooking', {
   id: {
