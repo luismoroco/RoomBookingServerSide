@@ -21,6 +21,6 @@ router.delete('/guest/:id', deleteGuestById);
 
 router.post('/booking', booking);
 router.get('/booking', getBookings);
-router.get('/booking/:d', getDetailedRoomBooking);
+router.get('/booking/:id', getDetailedRoomBooking);
 
 export default router;

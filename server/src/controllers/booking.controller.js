@@ -6,7 +6,7 @@ import { error505 } from '../utils/error.js';
 import { getAll, getById, ifexist } from '../utils/crud.utils.js';
 import { getDateTime } from '../utils/func.utils.js';
 import { Guest } from '../models/guest.js'
-import { state201 } from '../utils/right.js';
+import { state200, state201 } from '../utils/right.js';
 
 async function makeBookingRoom(body, id) {
   const idbook = id;
@@ -55,7 +55,8 @@ export const getBookings = async (req, res) => {
 export const getDetailedRoomBooking = async (req, res) => {
   const { id } = req.params;
   try {
-    getById(res, Booking, id);
+    const item = await Booking.findByPk(id);
+    state200(res, item);
   } catch (err) {
     error505(res, 'in getDetailedBooking');
   }
